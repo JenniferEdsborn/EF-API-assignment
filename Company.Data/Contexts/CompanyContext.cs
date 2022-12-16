@@ -1,4 +1,6 @@
-﻿namespace Company.Data.Contexts;
+﻿using System.Runtime.Intrinsics.Arm;
+
+namespace Company.Data.Contexts;
 
 public class CompanyContext : DbContext
 {
@@ -15,7 +17,13 @@ public class CompanyContext : DbContext
         base.OnModelCreating(builder);
         builder.Entity<EmployeePosition>()
             .HasKey(fg => new { fg.EmployeeID, fg.PositionID });
-        SeedData(builder);
+
+        //builder.Entity<Employee>()
+        //    .HasOne(e => e.Department)
+        //    .WithMany(ep => ep.)
+        //    .OnDelete(DeleteBehavior.SetNull);
+
+        //SeedData(builder);
     }
 
     private void SeedData(ModelBuilder builder)

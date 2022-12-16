@@ -1,4 +1,6 @@
-﻿namespace Company.API.Controllers;
+﻿using Company.Data.Entities;
+
+namespace Company.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
