@@ -19,9 +19,14 @@ public class CompanyContext : DbContext
             .HasKey(fg => new { fg.EmployeeID, fg.PositionID });
 
         //builder.Entity<Employee>()
-        //    .HasOne(e => e.Department)
-        //    .WithMany(ep => ep.)
-        //    .OnDelete(DeleteBehavior.SetNull);
+        //    .HasOne(e => e.DepartmentID)
+        //    .WithMany(ep => ep.ID)
+        //    .OnDelete(DeleteBehavior.NoAction);
+
+        //foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+        //{
+        //    relationship.DeleteBehavior = DeleteBehavior.Restrict;
+        //}
 
         //SeedData(builder);
     }
